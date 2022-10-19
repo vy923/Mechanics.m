@@ -1,20 +1,17 @@
-%{
--------------------------------------
-    Vladimir V. Yotov
-    Te Pūnaha Ātea Space Institute
-    University of Auckland
-
-    Version: 02.03.2022
--------------------------------------
-
-INPUTS
-    angVec  [psi theta phi]  angle vector
-    angSet  rotation order, i.e. 313 for 3-1-3 rotation, default 3-2-1
-
-OUTPUTS
-    R       Euler rotation matrix
-%}
-
+%  ------------------------------------------------------------------------------------------------
+%   DESCRIPTION
+%       R = rotR3(angVec,angSet)
+%
+%   INPUTS
+%       angVec      [psi theta phi]  angle vector
+%       angSet      rotation order, i.e. 313 for 3-1-3 rotation, default 3-2-1
+% 
+%   OUTPUTS
+%       R           Euler rotation matrix
+%
+%   VERSION
+%       v1.0 / 02.03.22 / V.Yotov
+%  ------------------------------------------------------------------------------------------------
 
 function R = rotR3(angVec,angSet)
 

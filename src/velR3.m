@@ -1,20 +1,17 @@
-%{
--------------------------------------
-    Vladimir V. Yotov
-    Te Pūnaha Ātea Space Institute
-    University of Auckland
-
-    Version: 02.03.2022
--------------------------------------
-
-INPUTS
-    angVec  [psi theta phi]  angle vector
-    angSet  rotation order, i.e. 313 for 3-1-3 rotation, default 3-2-1
-
-OUTPUTS
-    B       transformation matrix s.t. wb = B*angVecDot
-%}
-
+%  ------------------------------------------------------------------------------------------------
+%   DESCRIPTION
+%       B = velR3(angVec,angSet)
+%
+%   INPUTS
+%       angVec      [psi theta phi]  angle vector
+%       angSet      rotation order, i.e. 313 for 3-1-3 rotation, default 3-2-1
+% 
+%   OUTPUTS
+%       B           transformation matrix s.t. wb = B*angVecDot
+%
+%   VERSION
+%       v1.0 / 02.03.22 / V.Yotov
+%  ------------------------------------------------------------------------------------------------
 
 function B = velR3(angVec,angSet)
 

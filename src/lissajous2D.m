@@ -1,38 +1,17 @@
-%{
--------------------------------------
-    Vladimir V. Yotov
-    Te Pūnaha Ātea Space Institute
-    University of Auckland
-
-    Version: 19.02.2022
--------------------------------------
-
-IPUTS
-    fx, fy  complex arrays, e.g. x-axis and y-axis complex forces
-
-OUTPUTS
-    ampl    SEMI-major axis/amplidute of lissajous ellipse w. center (0,0)
-    coeffs  ellipse coefficients: Ax^2 + Bxy + Cy^2 + F = 0
-
-PLOT EXAMPLE
-	fx = [-7 4*sqrt(-1)]*[.5-rand(2,1)];                                    % Random complex number
-	fy = [2 -3*sqrt(-1)]*[.5-rand(2,1)]; 
-	wt = linspace(-pi,pi,100)';
-    complex2cos = @(x,wt) abs(x)*cos(wt+angle(x));                          % Complex to time signal
-
-    grootMod()
-    tl = tiledlayout(1,2,'padding','none','tilespacing','tight');
-    ax(1) = nexttile;
-        hold on
-            set(ax(1),'XLim',[min(wt) max(wt)]);
-            plot(wt,complex2cos(fx,wt),'-b')
-            plot(wt,complex2cos(fy,wt),'-r')
-        title('Out of phase harmonic forces')
-    ax(2) = nexttile;
-        hold on
-            plot(complex2cos(fx,wt), complex2cos(fy,wt), '-m')              % Lissajous curve/ellipse
-        title('Force in $xy$-plane over 1 cycle') 
-%}
+%  ------------------------------------------------------------------------------------------------
+%   DESCRIPTION
+%       [ampl,coeffs] = lissajous2D(fx,fy)
+%
+%   IPUTS
+%       fx, fy      complex arrays, e.g. x-axis and y-axis complex forces
+% 
+%   OUTPUTS
+%       ampl        SEMI-major axis/amplidute of lissajous ellipse w. center (0,0)
+%       coeffs      ellipse coefficients: Ax^2 + Bxy + Cy^2 + F = 0
+%
+%   VERSION
+%       v1.0 / 10.02.22 / V Yotov  
+%  ------------------------------------------------------------------------------------------------
 
 function [ampl,coeffs] = lissajous2D(fx,fy)
 
@@ -55,6 +34,29 @@ function [ampl,coeffs] = lissajous2D(fx,fy)
     coeffs.T = ampl;
 
 
+
+%  ------------------------------------------------------------------------------------------------
+%{
+% PLOT EXAMPLE
+
+	fx = [-7 4*sqrt(-1)]*[.5-rand(2,1)];                                    % Random complex number
+	fy = [2 -3*sqrt(-1)]*[.5-rand(2,1)]; 
+	wt = linspace(-pi,pi,100)';
+    complex2cos = @(x,wt) abs(x)*cos(wt+angle(x));                          % Complex to time signal
+
+    grootMod()
+    tl = tiledlayout(1,2,'padding','none','tilespacing','tight');
+    ax(1) = nexttile;
+        hold on
+            set(ax(1),'XLim',[min(wt) max(wt)]);
+            plot(wt,complex2cos(fx,wt),'-b')
+            plot(wt,complex2cos(fy,wt),'-r')
+        title('Out of phase harmonic forces')
+    ax(2) = nexttile;
+        hold on
+            plot(complex2cos(fx,wt), complex2cos(fy,wt), '-m')              % Lissajous curve/ellipse
+        title('Force in $xy$-plane over 1 cycle') 
+%}
 
 
 
