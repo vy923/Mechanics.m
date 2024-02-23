@@ -1,3 +1,4 @@
+function [g,s] = smoothstep(n,xmax)
 %  ------------------------------------------------------------------------------------------------
 %   DESCRIPTION
 %       [g,s] = smoothstep(n,xmax)
@@ -14,10 +15,8 @@
 %       s           symbolic function
 %
 %   VERSION
-%       v1.0 / 03.03.22 / V.Yotov
+%   v1.0 / 03.03.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
-
-function [g,s] = smoothstep(n,xmax)
 
     syms s(x,t)
     if xmax == 0                                                            % no ramping

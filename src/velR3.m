@@ -1,3 +1,4 @@
+function B = velR3(angVec,angSet)
 %  ------------------------------------------------------------------------------------------------
 %   DESCRIPTION
 %       B = velR3(angVec,angSet)
@@ -10,10 +11,8 @@
 %       B           transformation matrix s.t. wb = B*angVecDot
 %
 %   VERSION
-%       v1.0 / 02.03.22 / V.Yotov
+%   v1.0 / 02.03.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
-
-function B = velR3(angVec,angSet)
 
 if (nargin==1)    
     angSet = 321;   

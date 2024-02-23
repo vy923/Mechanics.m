@@ -1,3 +1,4 @@
+function R = rotR3(angVec,angSet)
 %  ------------------------------------------------------------------------------------------------
 %   DESCRIPTION
 %       R = rotR3(angVec,angSet)
@@ -10,10 +11,8 @@
 %       R           Euler rotation matrix
 %
 %   VERSION
-%       v1.0 / 02.03.22 / V.Yotov
+%   v1.0 / 02.03.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
-
-function R = rotR3(angVec,angSet)
 
 if (nargin==1)    
     angSet = 321;   

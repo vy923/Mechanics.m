@@ -1,3 +1,4 @@
+function [g,dat] = sampledRamp(xmax,xr,ymax,pts,n)
 %  ------------------------------------------------------------------------------------------------
 %   DESCRIPTION
 %       [g,dat] = sampledRamp(xmax,xr,ymax,pts,n)
@@ -17,10 +18,8 @@
 %       dat         [x,y] data
 %
 %   VERSION
-%       v1.0 / 30.05.22 / V.Yotov
+%   v1.0 / 30.05.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
-
-function [g,dat] = sampledRamp(xmax,xr,ymax,pts,n)
 
 if ~exist('n','var')    
     n=-1;   

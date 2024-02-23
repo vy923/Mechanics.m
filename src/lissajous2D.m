@@ -1,3 +1,4 @@
+function [ampl,coeffs] = lissajous2D(fx,fy)
 %  ------------------------------------------------------------------------------------------------
 %   DESCRIPTION
 %       [ampl,coeffs] = lissajous2D(fx,fy)
@@ -10,10 +11,8 @@
 %       coeffs      ellipse coefficients: Ax^2 + Bxy + Cy^2 + F = 0
 %
 %   VERSION
-%       v1.0 / 10.02.22 / V Yotov  
+%   v1.0 / 10.02.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
-
-function [ampl,coeffs] = lissajous2D(fx,fy)
 
 % Ellipse coefficients
     A = 1./abs(fx).^2;    
@@ -32,8 +31,6 @@ function [ampl,coeffs] = lissajous2D(fx,fy)
     coeffs.D = D;
     coeffs.F = F;
     coeffs.T = ampl;
-
-
 
 %  ------------------------------------------------------------------------------------------------
 %{
@@ -57,7 +54,7 @@ function [ampl,coeffs] = lissajous2D(fx,fy)
             plot(complex2cos(fx,wt), complex2cos(fy,wt), '-m')              % Lissajous curve/ellipse
         title('Force in $xy$-plane over 1 cycle') 
 %}
-
+%  ------------------------------------------------------------------------------------------------
 
 
 
