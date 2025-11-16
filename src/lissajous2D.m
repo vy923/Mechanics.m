@@ -11,6 +11,7 @@ function [ampl,coeffs] = lissajous2D(fx,fy)
 %       coeffs      ellipse coefficients: Ax^2 + Bxy + Cy^2 + F = 0
 %
 %   VERSION
+%   v1.1 / 09.07.25 / --    xfig plot
 %   v1.0 / 10.02.22 / V.Y.
 %  ------------------------------------------------------------------------------------------------
 
@@ -41,17 +42,14 @@ function [ampl,coeffs] = lissajous2D(fx,fy)
 	wt = linspace(-pi,pi,100)';
     complex2cos = @(x,wt) abs(x)*cos(wt+angle(x));                          % Complex to time signal
 
-    grootMod()
-    tl = tiledlayout(1,2,'padding','none','tilespacing','tight');
-    ax(1) = nexttile;
-        hold on
-            set(ax(1),'XLim',[min(wt) max(wt)]);
-            plot(wt,complex2cos(fx,wt),'-b')
-            plot(wt,complex2cos(fy,wt),'-r')
+    t = tiledlayout(1,2);
+    ax(1) = xfig(nexttile(t,1));
+        set(ax(1),'XLim',[min(wt) max(wt)]);
+        plot(wt,complex2cos(fx,wt),'-b')
+        plot(wt,complex2cos(fy,wt),'-r')
         title('Out of phase harmonic forces')
-    ax(2) = nexttile;
-        hold on
-            plot(complex2cos(fx,wt), complex2cos(fy,wt), '-m')              % Lissajous curve/ellipse
+    ax(2) = xfig(nexttile(t,2));
+        plot(complex2cos(fx,wt), complex2cos(fy,wt), '-m')              % Lissajous curve/ellipse
         title('Force in $xy$-plane over 1 cycle') 
 %}
 %  ------------------------------------------------------------------------------------------------
